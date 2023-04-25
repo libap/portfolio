@@ -299,11 +299,11 @@ textarea {
   }
   
   .slide-in {
-    animation: slide-in 0.5s forwards;
+    animation: slide-in 0.3s forwards;
   }
   
   .slide-in-reverse {
-    animation: slide-in-reverse 0.5s forwards;
+    animation: slide-in-reverse 0.3s forwards;
   }
   
   .slide-in-hidden {
