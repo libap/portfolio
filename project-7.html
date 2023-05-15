@@ -104,16 +104,40 @@
           <div class="project-details__content-main">
             <div class="project-details__desc">
               <h3 class="project-details__content-title">Présentation du projet</h3>
-              <p class="project-details__desc-para">
-                J'ai utilisé Flask, un framework Web Python, pour :
-                <strong>Créer une application Web d'agenda collaboratif :</strong> Cette application permet aux utilisateurs de créer des événements et de les partager avec d'autres utilisateurs.
-                <strong>Stocker les données des événements avec SQLite3 :</strong> Pour stocker les données des événements, j'ai utilisé SQLite3, une base de données relationnelle légère et rapide.
-                <strong>Inclure des fonctionnalités de création, modification et suppression d'événements :</strong> Les fonctionnalités de l'application incluent la création, la modification et la suppression d'événements, ainsi que la possibilité de les partager avec d'autres utilisateurs.
-                <strong>Implémenter des fonctionnalités de filtrage et de notification :</strong> J'ai également inclus des fonctionnalités de filtrage pour afficher les événements par date, par utilisateur ou par catégorie. En outre, j'ai implémenté une fonctionnalité de notification pour informer les utilisateurs des changements apportés aux événements auxquels ils ont été invités.
-               </p>
-              <p class="project-details__desc-para">
-                <strong>Créer une application Web efficace et facile à utiliser :</strong> En utilisant Flask et SQLite3, j'ai pu créer une application Web d'agenda collaboratif efficace et facile à utiliser. Les utilisateurs peuvent facilement planifier des événements et les partager avec d'autres personnes, tout en restant informés des mises à jour de manière transparente.
-               </p>
+             <ul class="project-details__desc-para">
+                <li>
+                    <strong>Agenda Flask avec SQLite3 :</strong>
+                    J'ai développé un agenda en utilisant Flask et SQLite3. Plusieurs personnes peuvent ajouter des événements au calendrier, et les autres membres peuvent les voir et y accéder en temps réel, ce qui permet une meilleure organisation entre les membres d'un groupe.
+                </li>
+                <li>
+                    <strong>Partage d'agenda par e-mail :</strong>
+                    Chaque calendrier peut être partagé par e-mail en envoyant l'URL du calendrier contenant un hash précis. Seules les personnes ayant accès à ce lien spécifique pourront accéder au calendrier.
+                </li>
+                <li>
+                    <strong>Structure de données avec SQLite3 :</strong>
+                    Les événements du calendrier sont stockés dans une base de données SQLite3, ce qui permet de les organiser et de les récupérer facilement.
+                </li>
+                <li>
+                    <strong>Interface utilisateur :</strong>
+                    L'interface utilisateur permet aux utilisateurs de créer, modifier et supprimer des événements dans le calendrier. Ils peuvent également voir les événements ajoutés par les autres membres en temps réel.
+                </li>
+                <li>
+                    <strong>Utilisation de Flask :</strong>
+                    Le projet utilise le framework Flask pour gérer les requêtes HTTP, le routage et la gestion des dépendances. Flask facilite le développement d'applications web en Python.
+                </li>
+                <li>
+                    <strong>Utilisation de SQLite3 :</strong>
+                    Le choix de SQLite3 comme système de gestion de base de données permet une intégration simple avec Flask. SQLite3 est une base de données légère et autonome, idéale pour les petites applications.
+                </li>
+                <li>
+                    <strong>Sécurité :</strong>
+                    Des mesures de sécurité sont mises en place pour garantir que seules les personnes autorisées peuvent accéder aux calendriers partagés. Les URL sont générées avec des hashs précis pour renforcer la sécurité.
+                </li>
+                <li>
+                    <strong>Résumé du projet :</strong>
+                    En résumé, ce projet Flask avec SQLite3 est un agenda collaboratif qui permet à plusieurs utilisateurs d'ajouter, modifier et supprimer des événements dans un calendrier partagé. Les événements sont stockés dans une base de données SQLite3 et l'application utilise le framework Flask pour la gestion des requêtes HTTP. La sécurité est renforcée en générant des URL avec des hashs précis pour limiter l'accès aux calendriers partagés.
+                </li>
+            </ul>
             </div>
             <div class="project-details__tools-used">
               <h3 class="project-details__content-title">Outils utilisés</h3>
