@@ -483,9 +483,9 @@ textarea {
     text-align: center; }
 
 .project-details__content {
-  padding: 8rem 0;
+  padding: 8rem 0 0 0;
   max-width: 90rem;
-  margin: auto; }
+  margin: auto auto 20px auto; }
   .project-details__content-title {
     font-weight: 700;
     font-size: 2.8rem;
@@ -1017,6 +1017,8 @@ textarea {
 
   .skills__skill {
     position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
   }
   
   .skills__skill:hover:after {
@@ -1051,4 +1053,117 @@ textarea {
     font-size: 2rem;
   }
   
+  .project-container{
+    margin-bottom: 70px;
+  }
   
+  .hidden {
+    display: none;
+  }
+
+
+
+  /*DERNIERE MODIF*/
+  .project-suggestions__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .project-suggestion__title{
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+  
+  .project-suggestion {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px; /* Taille maximale des projets */
+    background-color: #ebebeb;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Ajout de l'ombre */
+
+  }
+  
+  .project-suggestion__image {
+    width: 100%;
+    height: 200px;
+    max-height: 200px; /* Hauteur maximale des images */
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+  }
+  #titleSuggestions{
+    margin-left: 400px;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    text-decoration: underline;
+  }
+
+  .project-details__suggestions{
+    display: flex;
+    flex-direction: column;
+
+  }
+ 
+
+  
+  
+  .project-suggestion.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .project-suggestion.show:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+
+  }
+  #btn-retour {
+    color: #000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 1px;
+    font-size: 25px;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid black;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Ajout de l'ombre */
+  }
+  
+  #btn-retour:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+  }
+  
+  
+  
+  
+  @media (max-width: 767px) {
+    .project-suggestions__container{
+      flex-direction: column;
+      gap: 40px;
+    }
+    #titleSuggestions{
+      margin-left: 100px;
+
+    }
+    #btn-retour{
+      width: 250px;
+      font-size: 20px;
+    }
+  }
+    
