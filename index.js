@@ -17,7 +17,7 @@ function createMenuHeader() {
   for (var i = 0; i < 1; i++) {
     headerHTML += `
     <div class="header__content">
-    <a href="#accueil" id="btn-retour" data-id-projetAccueil="" class="hidden" onclick="toggleProjectsContent()">
+    <a id="btn-retour" data-id-projetAccueil="" class="hidden" onclick="toggleProjectsContent()">
       <span class="btn-retour-arrow">&#8592;</span> Retour aux projets
     </a>
     <div class="header__logo-container">
@@ -156,7 +156,7 @@ function createProjectsAccueil() {
         <div class="projects__row-content zoomable">
           <h3 class="projects__row-content-title">${project.title}</h3>
           <p class="projects__row-content-desc">${project.description}</p>
-          <a href="#details" data-id="${i}" onclick="generateProjectDetailHTML(${i})" class="btn btn--med btn--theme dynamicBgClr">En savoir +</a>
+          <a  data-id="${i}" onclick="generateProjectDetailHTML(${i})" class="btn btn--med btn--theme dynamicBgClr">En savoir +</a>
         </div>
       </div>
     `;
