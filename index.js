@@ -739,12 +739,12 @@ function getProjectsData() {
       title: "Agenda collaboratif en Python",
       description:
         "Plusieurs personnes peuvent ajouter des événements au calendrier. Les autres membres peuvent les voir, les modifier, les supprimer en temps réel ce qui permet une meilleure organisation entre les membres d'un groupe. Ce projet utilise le framework Flask.",
-      imageSrc: "./assets//pythonCalendar/calendarLien.PNG",
+      imageSrc: "./assets//pythonCalendar/calendarPreview.PNG",
       link: "./project-4.html",
       details: {
         id: "header4",
         title: "Agenda collaboratif en Python",
-        imageSrc: "./assets//pythonCalendar/calendarLien.PNG",
+        imageSrc: "./assets//pythonCalendar/calendarDev.PNG",
         descTitle: "Présentation du projet",
         descList: [
           {
