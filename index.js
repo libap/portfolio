@@ -151,7 +151,7 @@ function createProjectsAccueil() {
       <span class="heading-sec__main category" data-id-projetAccueil="${i}">${project.category}</span>
       <div class="projects__row slide-in">
         <div class="projects__row-img-cont">
-          <img src="${project.imageSrc}" alt="Software Screenshot" class="projects__row-img" loading="lazy" />
+          <img src="${project.imageSrc}" alt="${project.title}" class="projects__row-img" loading="lazy" />
         </div>
         <div class="projects__row-content zoomable">
           <h3 class="projects__row-content-title">${project.title}</h3>
@@ -206,9 +206,7 @@ function generateProjectSuggestions(projectIndex) {
 
     projectSuggestionsHTML += `
       <div class="project-suggestion zoomable" onclick="generateProjectDetailHTML(${index})">
-        <img src="${project.imageSrc}" alt="Projet ${
-      index + 1
-    }" class="project-suggestion__image">
+        <img src="${project.imageSrc}" alt="Projet suivant:  ${project.title}" class="project-suggestion__image">
         <h3 class="project-suggestion__title">${project.title}</h3>
       </div>
       `;
@@ -267,72 +265,66 @@ function generateProjectDetailHTML(projectIndex) {
         <section class="project-details">
           <div class="project-details__content">
             <div class="project-details__showcase-img-cont">
-              <img src="${
-                project.details.imageSrc
-              }" alt="Project Image" class="project-details__showcase-img">
+              <img src="${project.details.imageSrc
+        }"  class="project-details__showcase-img">
             </div>
             <div class="project-details__content-main">
               <div class="project-details__desc">
-                <h3 class="project-details__content-title">${
-                  project.details.descTitle
-                }</h3>
+                <h3 class="project-details__content-title">${project.details.descTitle
+        }</h3>
                 <ul class="project-details__desc-para">
                   ${project.details.descList
-                    .map(
-                      (item) =>
-                        `<li><strong>${item.strong}</strong> ${item.content}</li>`
-                    )
-                    .join("")}
+          .map(
+            (item) =>
+              `<li><strong>${item.strong}</strong> ${item.content}</li>`
+          )
+          .join("")}
                 </ul>
               </div>
               <div class="project-details__tools-used">
                 <h3 class="project-details__content-title">Outils utilisés</h3>
                 <div class="skills">
                   ${project.details.tools
-                    .map(
-                      (tool) =>
-                        `<div class="outilsDetails" data-name="${tool}"></div>`
-                    )
-                    .join("")}
+          .map(
+            (tool) =>
+              `<div class="outilsDetails" data-name="${tool}"></div>`
+          )
+          .join("")}
                 </div>
               </div>
-              ${
-                project.details.siteLink || project.details.codeLink
-                  ? `
+              ${project.details.siteLink || project.details.codeLink
+          ? `
                 <div class="project-details__links">
                   <h3 class="project-details__content-title">Projet fini</h3>
-                  ${
-                    project.details.siteLink
-                      ? `<a href="${project.details.siteLink}" class="btn btn--med btn--theme project-details__links-btn" target="_blank">voir le site</a>`
-                      : ""
-                  }
-                  ${
-                    project.details.codeLink
-                      ? `<a href="${project.details.codeLink}" class="btn btn--med btn--theme-inv project-details__links-btn" target="_blank">voir le code</a>`
-                      : ""
-                  }
+                  ${project.details.siteLink
+            ? `<a href="${project.details.siteLink}" class="btn btn--med btn--theme project-details__links-btn" target="_blank">voir le site</a>`
+            : ""
+          }
+                  ${project.details.codeLink
+            ? `<a href="${project.details.codeLink}" class="btn btn--med btn--theme-inv project-details__links-btn" target="_blank">voir le code</a>`
+            : ""
+          }
                 </div>
               `
-                  : ""
-              }
-              ${
-                project.details.mobileImages &&
-                project.details.mobileImages.length > 0
-                  ? `
+          : ""
+        }
+              ${project.details.mobileImages &&
+          project.details.mobileImages.length > 0
+          ? `
               <div class="project-details__presentation">
                 <h3 class="project-details__content-title">Version mobile</h3>
                 <div class="container">
                   ${project.details.mobileImages
-                    .map(
-                      (image) =>
-                        `<div class="imgProjet" style="background-image: url('${image}');"></div>`
-                    )
-                    .join("")}
+            .map(
+              (image) =>
+                `<div class="imgProjet" style="background-image: url('${image}');"></div>`
+            )
+            .join("")}
                 </div>
               </div>
             `
-                  : ""
-              }
+          : ""
+        }
             </div>
           </div>
         </section>
@@ -437,10 +429,10 @@ function createFooter() {
             </h2>
             <div class="main-footer__social-cont">
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/baptiste-li-mandri-1636a5178/">
-                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icon" />
+                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icone linkedin account" />
               </a>
               <a target="_blank" rel="noreferrer" href="https://github.com/libap">
-                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icon" />
+                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icone github account" />
               </a>
             </div>
             <ul>
@@ -449,7 +441,7 @@ function createFooter() {
             </ul>
           </div>
           <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">li mandri baptiste</h4>
+            <h3 class="heading heading-sm text-lt">li mandri baptiste</h3>
             <p class="main-footer__short-desc">
               En 2ème année d'un bachelor de développement web Full Stack, je peux construire le Frontend et le Backend de sites web et/ou d'applications web.
             </p>
