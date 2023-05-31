@@ -268,7 +268,7 @@ function generateProjectDetailHTML(projectIndex) {
           <div class="project-details__content">
             <div class="project-details__showcase-img-cont">
               <img src="${
-                project.imageSrc
+                project.details.imageSrc
               }" alt="Project Image" class="project-details__showcase-img">
             </div>
             <div class="project-details__content-main">
