@@ -532,6 +532,121 @@ function createToolsButtons() {
   }
   console.log("Outils utilisés bien ajoutés");
 }
+// Fonction pour animer les lettres une par une et les éléments de la section "About"
+function animateContent() {
+  // Sélectionnez l'élément avec la classe "heading-primary"
+  const heading = document.querySelector('.heading-primary');
+
+  // Divisez le texte en lettres individuelles
+  const text = heading.textContent;
+  const letters = text.split('');
+
+  // Remplacez le contenu du titre par des span pour chaque lettre
+  const newContent = letters
+    .map(letter => `<span class="letter">${letter}</span>`)
+    .join('');
+  heading.innerHTML = newContent;
+
+  // Animation des lettres avec GSAP
+  gsap.from('.letter', {
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    delay: 0.1,
+    stagger: 0.05,
+  });
+
+  // Animation du bouton Projets avec un délai
+  setTimeout(function() {
+    gsap.from(".home-hero__cta", {
+      opacity: 0,
+      duration: 1.5,
+      scale: 0.8,
+      ease: "power4.out",
+    });
+  }, 3000); // Ajoutez un délai de 3 secondes (3000 millisecondes)
+
+  // Appel de la fonction pour vérifier la visibilité de la classe "about__content-title"
+  checkVisibility();
+}
+
+// Appel de la fonction d'animation lorsque le contenu est chargé
+window.addEventListener('DOMContentLoaded', animateContent);
+
+// Fonction pour vérifier si l'élément est visible à l'écran
+function checkVisibility() {
+  const aboutTitle = document.querySelector('.about__content-title');
+  const bounding = aboutTitle.getBoundingClientRect();
+
+  if (
+    bounding.top >= 0 &&
+    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  ) {
+    animateAboutSection(); // Appel de la fonction animateAboutSection() lorsque l'élément est visible à l'écran
+    window.removeEventListener('scroll', checkVisibility); // Suppression de l'écouteur d'événement une fois que l'animation est terminée
+  }
+}
+
+// Fonction pour animer les éléments de la section "About"
+function animateAboutSection() {
+  // Animation du titre principal
+  gsap.from(".heading-sec__main", {
+    opacity: 0,
+    duration: 0.8,
+    y: -50,
+    ease: "power4.out",
+  });
+
+  // Animation du sous-titre
+  gsap.from(".heading-sec__sub", {
+    opacity: 0,
+    duration: 0.8,
+    delay: 1,
+    y: -50,
+    ease: "power4.out",
+  });
+
+  // Animation des détails du contenu
+  gsap.from(".about__content-details-para", {
+    opacity: 0,
+    duration: 1,
+    delay: 1,
+    y: -30,
+    stagger: 0.2,
+    ease: "power4.out",
+  });
+
+  // Animation du bouton de contact
+  gsap.from(".btn--theme.dynamicBgClr", {
+    opacity: 0,
+    duration: 0.6,
+    delay: 1.2,
+    scale: 0.8,
+    ease: "power4.out",
+  });
+
+  // Animation des compétences
+  gsap.from(".outilsDetails", {
+    opacity: 0,
+    duration: 0.6,
+    delay: 1.6,
+    x: -30,
+    stagger: 0.1,
+    ease: "power4.out",
+  });
+
+  // Animation du bouton de téléchargement du CV
+  gsap.from(".cv_button", {
+    opacity: 0,
+    duration: 1,
+    delay: 2,
+    scale: 0.8,
+    ease: "power4.out",
+  });
+}
+
+// Ajout de l'écouteur d'événement scroll
+window.addEventListener('scroll', checkVisibility);
 
 
 //L'INTEGRALITE DU CONTENU DES PROJETS *//*
